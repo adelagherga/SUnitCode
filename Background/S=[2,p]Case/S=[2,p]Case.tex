@@ -1,0 +1,173 @@
+\documentclass[11pt]{article}
+
+% relevant packages
+\usepackage[parfill]{parskip} 	% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs }
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[all]{xy}
+\usepackage[english]{babel}
+\usepackage{setspace}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% stylistic environment
+\definecolor{grau}{rgb}{0.3,0.3,0.3}
+\usepackage[colorlinks, linkcolor=grau, citecolor=grau, urlcolor=grau]{hyperref}
+\usepackage{breakurl}
+\urlstyle{same}
+\usepackage[top=1.3in, bottom=1.6in, left=1.3in, right=1.3in]{geometry}
+\frenchspacing
+\sloppy
+\usepackage{booktabs}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{enumerate}
+\onehalfspacing
+
+% relevant environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{properties}[theorem]{Properties}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+
+\theoremstyle{definition}
+\newtheorem{Algorithm}[theorem]{Algorithm}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% math operators
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\rad}{rad}
+
+% mathbb characters
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+
+% code environment
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{%frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+
+\title{The Sum of Two $S$-Units Being a Square \\ 
+	Where $S = \{2,p\}$}
+	
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+
+Suppose $S = \{2,p\}$, where $p \geq 3$ is a prime and let $\tilde{S}$ denote the set of positive rational integers which have no prime divisors outside of $S$. We study the equation
+\[x + y = z^2\]
+in $x,y$ $\tilde{S}$-units, and $z \in \mathbb{Q}$, where the set of $\tilde{S}$-unit in this case is defined as
+\[\{ \pm 2^{x_1}p^{x_2} \ | \ x_i \in \mathbb{Z} \text{ for } i = 1, 2\}.\]
+
+Clearing denominators, without loss of generality, we may study the equation 
+\[x + y = z^2\]
+where 
+\[\begin{cases}
+x \in \tilde{S}, & \pm y \in \tilde{S}, \\
+x \geq y, & z \in \mathbb{Z}, \\
+z > 0, & \gcd(x,y) \text{ is squarefree}.
+\end{cases}\]
+
+In other words, 
+\[\begin{cases}
+x \geq 0, & \rad(x) | 2p, \\
+y \in \mathbb{Z}, & \rad(y) | 2p, \\
+x \geq y, & z \in \mathbb{Z}, \\
+z > 0, & \gcd(x,y) \text{ is squarefree}.
+\end{cases}\]
+
+Hence let $x = 2^{a}p^b$ and $y = 2^{c}p^d$. Since
+\[ \gcd(x,y) = \gcd(2^ap^b, 2^bp^d) = 2^{\min(a,c)}p^{\min(b,d)}\]
+is necessarily squarefree, it follows that $\min(a,c) \leq 1$ and $\min(b,d) \leq 1$. This leaves us several cases to consider. 
+
+\begin{center}
+\begin{tabular}{| c | r | c |} \hline
+Case	 	& $x + y = z^2$ 			&  Additional Conditions \\ \hline \hline
+		& $2^a + p^d = z^2$			& \\
+1.		& $- 2^a + p^d = z^2$ 		&  $a \geq 0$, $d \geq 0$ \\ 
+		& $2^a - p^d = z^2$			& \\ \hline
+		& $2^ap + p^d = z^2$		& \\
+2.		& $- 2^ap + p^d = z^2$	 	&  $a \geq 0$, $d \geq 1$ \\
+		& $2^ap - p^d = z^2$			& \\ \hline
+		& $2^ap^b + 1 = z^2$		& \\
+3.		& $-2^ap^b + 1 = z^2$ 		&  $a \geq 0$, $b \geq 0$ \\
+		& $2^ap^b - 1 = z^2$			& \\ \hline
+		& $2^ap^b + p = z^2$		& \\
+4.		& $-2^ap^b + p = z^2$ 		&  $a \geq 0$, $b \geq 1$ \\
+		& $2^ap^b - p = z^2$			& \\ \hline
+		& $2^a + 2p^d = z^2$		& \\
+5.		& $-2^a + 2p^d = z^2$	 	&  $a \geq 1$, $d \geq 0$ \\ 
+		& $2^a - 2p^d = z^2$			& \\ \hline
+		& $2^ap + 2p^d = z^2$		& \\
+6.		& $-2^ap + 2p^d = z^2$ 		&  $a \geq 1$, $d \geq 1$ \\
+		& $2^ap - 2p^d = z^2$		& \\ \hline
+		& $2^ap^b + 2 = z^2$		& \\
+7.		& $-2^ap^b + 2 = z^2$ 		&  $a \geq 1$, $b \geq 0$ \\ 
+		& $2^ap^b - 2 = z^2$			& \\ \hline
+		& $2^ap^b + 2p = z^2$		& \\ 
+8.		& $-2^ap^b + 2p = z^2$ 		&  $a \geq 1$, $b \geq 1$ \\ 
+		& $2^ap^b - 2p = z^2$		& \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

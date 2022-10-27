@@ -1,0 +1,150 @@
+\documentclass[11pt]{article}
+
+% relevant packages
+\usepackage[parfill]{parskip} 	% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs }
+\usepackage{amsthm}
+\usepackage{epstopdf}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[all]{xy}
+\usepackage[english]{babel}
+\usepackage{setspace}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% stylistic environment
+\definecolor{grau}{rgb}{0.3,0.3,0.3}
+\usepackage[colorlinks, linkcolor=grau, citecolor=grau, urlcolor=grau]{hyperref}
+\usepackage{breakurl}
+\urlstyle{same}
+\usepackage[top=1.3in, bottom=1.6in, left=1.3in, right=1.3in]{geometry}
+\frenchspacing
+\sloppy
+\usepackage{booktabs}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{enumerate}
+\onehalfspacing
+
+% relevant environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{properties}[theorem]{Properties}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{question}[theorem]{Question}
+
+\theoremstyle{definition}
+\newtheorem{Algorithm}[theorem]{Algorithm}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+% math operators
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\sgn}{sgn}
+
+% mathbb characters
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+
+% code environment
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{%frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+
+\title{Algorithms for $S$-Unit Equations, Revisited}
+	
+\author{}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+%----------------------------------------------------------------------------------------------------------------------------------------------%
+
+\section{de Weger's Approach}
+
+Let $S = \{p_1, \dots, p_s\}$ be a finite set of rational primes, write $N_S = \prod_{p \in S} p$ and denote by $\mathcal{O}^{\times}$ the group of units of $\mathcal{O} = \mathbb{Z}[1/N_S]$. We are interested in solving the $S$-unit equation
+\begin{equation} \label{Eq:1}
+x + y = 1, \quad (x,y) \in \mathcal{O}^{\times} \times \mathcal{O}^\times.
+\end{equation}
+
+Suppose that $(x,y)$ satisfies \eqref{Eq:1}. Then there exists nonzero $a,b,c \in \mathbb{Z}$ with $\gcd(a,b,c) = 1$ and $\rad(abc) \mid N_S$, such that $x = \frac{a}{c}$, $y = \frac{b}{c}$, and $a + b = c$. Indeed, since $(x,y) \in \mathcal{O}^{\times} \times \mathcal{O}^\times$, we have $x = \frac{\alpha_1}{\beta_1}, y = \frac{\alpha_2}{\beta_2}$, where $(\alpha_1, \beta_1) = 1$, $(\alpha_2 \beta_2) = 1$, and $\alpha_1, \beta_1, \alpha_2, \beta_2$ are integers composed only of primes of $S$. Then
+\[x + y = \frac{\alpha_1}{\beta_1} + \frac{\alpha_2}{\beta_2} = 1\]
+yields 
+\[\alpha_1 \beta_2 + \alpha_2 \beta_1 = \beta_1 \beta_2\]
+and we take $a = \alpha_1 \beta_2$, $b = \alpha_2 \beta_1$ and $c = \beta_1 \beta_2$. Clearly, $\rad(abc) \mid N_S$. We note lastly that if a prime $p \in S$ divides two of $a,b,c$, then it must also divide the third integer, so that 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
